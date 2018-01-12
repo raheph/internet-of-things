@@ -1,0 +1,87 @@
+service: aws-lambda
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: java8
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeStream
+        - dynamodb:GetItem
+        - dynamodb:GetRecords
+        - dynamodb:GetShardIterator
+        - dynamodb:ListStreams
+        - dynamodb:PutItem
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:UpdateItem
+      Resource: arn:aws:dynamodb:*:*:table/offer_tuesday
+
+
+resources:
+  Resources:
+    MyTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: offer_tuesday
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: offerName
+            AttributeType: S
+
+        GlobalSecondaryIndexes:
+          - IndexName: "offerName-index"
+            KeySchema:
+              - AttributeName: offerName
+                KeyType: "HASH"
+            Projection:
+              ProjectionType: "ALL"
+            ProvisionedThroughput:
+              ReadCapacityUnits: 2
+              WriteCapacityUnits: 2
+
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+
+
+
+package:
+  artifact: aws-lambda/build/distributions/aws-lambda-1.0.zip
+
+functions:
+  offer_tuesday:
+    handler: com.serverless.DDBEventProcessor
+    events:
+      - stream:
+          type: dynamodb
+          arn:
+            Fn::GetAtt:
+              - MyTable
+              - StreamArn
+      - http:
+          path: ping
+          method: get
+      - alexaSkill
+
+  HelloWorldSpeechlet:
+    handler: com.serverless.HelloWorldSpeechletRequestStreamHandler
+    events:
+      - stream:
+          type: dynamodb
+          arn:
+            Fn::GetAtt:
+              - MyTable
+              - StreamArn
+      - http:
+          path: ping
+          method: get
+      - alexaSkill

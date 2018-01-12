@@ -1,0 +1,29 @@
+
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+subprojects {
+    version = '1.0'
+}
+//
+//dependencies {
+//    compile (
+//            project (':aws-com.serverless'),
+//            project (':aws-dynamodb')
+//    )
+//}
+
+configure(subprojects.findAll {it.name == 'aws-lambda' && it.name == 'aws-dynamodb' && it.name == 'aws-alexa-skill'} ) {
+
+    apply plugin : 'groovy'
+
+    dependencies {
+        testCompile 'org.spockframework:spock-core:1.0-groovy-2.4', {
+            exclude module : 'groovy-all'
+        }
+    }
+}

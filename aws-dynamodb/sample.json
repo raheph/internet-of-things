@@ -1,0 +1,13 @@
+[
+  {
+    "id": 404,
+    "offerName" : "Offer-3",
+    "description" : "upcoming offer three one for tuesday"
+
+  },
+  {
+    "id": 402,
+    "offerName" : "Offer-4",
+    "description" : "upcoming offer four for tuesday"
+  }
+]

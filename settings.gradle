@@ -1,0 +1,5 @@
+include (':aws-dynamodb')
+include (':aws-lambda')
+include(':aws-alexa-skill')
+
+rootProject.name = 'internet-of-things'
