@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="aws-alexa-skill_main" target="1.8" />
+      <module name="aws-alexa-skill_test" target="1.8" />
+      <module name="aws-dynamodb_main" target="1.8" />
+      <module name="aws-dynamodb_test" target="1.8" />
+      <module name="aws-lambda_main" target="1.8" />
+      <module name="aws-lambda_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

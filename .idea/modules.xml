@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-alexa-skill/aws-alexa-skill.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-alexa-skill/aws-alexa-skill.iml" group="aws-alexa-skill" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-alexa-skill/aws-alexa-skill_main.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-alexa-skill/aws-alexa-skill_main.iml" group="aws-alexa-skill" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-alexa-skill/aws-alexa-skill_test.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-alexa-skill/aws-alexa-skill_test.iml" group="aws-alexa-skill" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-dynamodb/aws-dynamodb.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-dynamodb/aws-dynamodb.iml" group="aws-dynamodb" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-dynamodb/aws-dynamodb_main.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-dynamodb/aws-dynamodb_main.iml" group="aws-dynamodb" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-dynamodb/aws-dynamodb_test.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-dynamodb/aws-dynamodb_test.iml" group="aws-dynamodb" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-lambda/aws-lambda.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-lambda/aws-lambda.iml" group="aws-lambda" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-lambda/aws-lambda_main.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-lambda/aws-lambda_main.iml" group="aws-lambda" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aws-lambda/aws-lambda_test.iml" filepath="$PROJECT_DIR$/.idea/modules/aws-lambda/aws-lambda_test.iml" group="aws-lambda" />
       <module fileurl="file://$PROJECT_DIR$/internet-of-things.iml" filepath="$PROJECT_DIR$/internet-of-things.iml" />
     </modules>
   </component>
